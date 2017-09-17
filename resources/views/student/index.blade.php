@@ -22,9 +22,9 @@
                     <td>{{$student->getSex($student->sex)}}</td>
                     <td>{{$student->age}}</td>
                     <td>
-                        <a href="javascript:" class="btn btn-default btn-xs"><i class="fa fa-fw fa-archive"></i> 详情</a>
+                        <a href="{{url('student/detail',['id'=>$student->id])}}" class="btn btn-default btn-xs"><i class="fa fa-fw fa-archive"></i> 详情</a>
                         <a href="{{url('student/update',['id'=>$student->id])}}" class="btn btn-default btn-xs"><i class="fa fa-fw fa-edit"></i> 修改</a>
-                        <a href="https://www.baidu.com" class="btn btn-danger btn-xs" onclick="return confirm('is del or not???')"><i class="fa fa-fw fa-trash-o"></i> 删除</a>
+                        <a href="{{url('student/delete',['id'=>$student->id])}}" class="btn btn-danger btn-xs" onclick="return confirm('is del or not???')"><i class="fa fa-fw fa-trash-o"></i> 删除</a>
                     </td>
                 </tr>
                     @endforeach

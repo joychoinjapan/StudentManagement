@@ -104,5 +104,18 @@ class StudentController extends \App\Http\Controllers\Controller{
         return view('student.update',['student'=>$student]);
     }
 
+    public function detail($id){
+        $student=Student::find($id);
+        return view('student.detail',['student'=>$student]);
+    }
+
+    public function delete($id){
+        $student=Student::find($id);
+        if($student->delete()){
+            return redirect('student/index')->with('success','删除成功-'.$id);
+        }else{
+            return redirect('student/index')->with('error','删除失败-'.$id);
+        }
+    }
 
 }
